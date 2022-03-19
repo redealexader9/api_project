@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="shortcut icon" href="#"/>
+  <link rel = "stylesheet" type = "text/css" href = "../static/styles.css">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <h1>
+    <a href = "{{#each directs}}../{{/each}}">cloud</a>
+{{#each directs}}
+/
+<a href = "../">{{this}}</a>
+
+{{/each}}
+
+</h1>
+<table>
+  
+{{#each files}}
+<tr>
+  <td>
+<a href="{{this}}">{{this}}</a>
+</td>
+</tr>
+{{/each}}
+
+</table>
+
+
+
+
+  <form method="POST" enctype="multipart/form-data">
+    <input type = "hidden" name = "command" value = "upload"/> 
+    <p><input type="file" name="file" />
+    <input type="submit" value="Upload" /></p>
+</form>
+<form method="POST" enctype="multipart/form-data" id="upload">
+    <input type="hidden" name="command" value="upload"/>
+  </form>
+</body>
+</html>
